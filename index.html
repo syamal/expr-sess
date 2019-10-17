@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Start</title>
+</head>
+<body>
+	<p>Refresh the page to increase the visit count</p>
+	<button onclick="display_cookie()"> Console Log Cookie</button>
+	<button onclick="redirect()"> End Session </button>
+
+</body>
+
+<script type="text/javascript">
+	
+	function display_cookie() {
+		//console.log( "clicked!" );
+		var cookie_single_array = document.cookie.split("=");
+	    console.log(cookie_single_array[1])
+	}
+
+	function redirect() {
+		var cookie_single_array = document.cookie.split("=");
+	    //console.log(cookie_single_array[1])
+		location.replace("http://localhost:3000/end/"+cookie_single_array[1])
+	}
+
+</script>
+</html>
